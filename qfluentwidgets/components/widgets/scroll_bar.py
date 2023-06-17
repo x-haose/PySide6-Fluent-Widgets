@@ -303,7 +303,7 @@ class ScrollBar(QWidget):
             else:
                 value = e.pos().x() - self._padding
 
-        self.setValue(int(value / self._slideLength() * self.maximum()))
+        self.setValue(int(value / max(self._slideLength(), 1) * self.maximum()))
         self.sliderPressed.emit()
 
     def mouseReleaseEvent(self, e):
@@ -318,7 +318,7 @@ class ScrollBar(QWidget):
             dv = e.pos().x() - self._pressedPos.x()
 
         # don't use `self.setValue()`, because it could be reimplemented
-        dv = int(dv / self._slideLength() * (self.maximum() - self.minimum()))
+        dv = int(dv / max(self._slideLength(), 1) * (self.maximum() - self.minimum()))
         ScrollBar.setValue(self, self.value() + dv)
 
         self._pressedPos = e.pos()
@@ -337,11 +337,11 @@ class ScrollBar(QWidget):
         if self.orientation() == Qt.Vertical:
             total = self.maximum() - self.minimum() + p.height()
             s = int(self._grooveLength() * p.height() / max(total, 1))
-            self.handle.setFixedHeight(max(40, s))
+            self.handle.setFixedHeight(max(30, s))
         else:
             total = self.maximum() - self.minimum() + p.width()
             s = int(self._grooveLength() * p.width() / max(total, 1))
-            self.handle.setFixedWidth(max(40, s))
+            self.handle.setFixedWidth(max(30, s))
 
     def _adjustHandlePos(self):
         total = max(self.maximum() - self.minimum(), 1)

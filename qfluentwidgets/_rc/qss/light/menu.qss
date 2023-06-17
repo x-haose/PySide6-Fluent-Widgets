@@ -49,6 +49,7 @@ MenuActionListWidget::item {
     border: none;
     margin-left: 6px;
     margin-right: 6px;
+    color: black;
 }
 
 MenuActionListWidget::item:disabled {
@@ -70,4 +71,22 @@ MenuActionListWidget::item:selected {
 MenuActionListWidget::item:selected:active {
     background-color: rgba(0, 0, 0, 0.06);
     color: rgba(0, 0, 0, 0.7);
+}
+
+#completerListWidget[dropDown=true] {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+#completerListWidget[dropDown=false] {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#completerListWidget::item {
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    border: none;
 }
