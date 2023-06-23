@@ -4,8 +4,7 @@ from PyQt5.QtDesigner import (QPyDesignerCustomWidgetPlugin, QDesignerFormWindow
                               QPyDesignerContainerExtension)
 
 from qfluentwidgets import (ScrollArea, SmoothScrollArea, SingleDirectionScrollArea, OpacityAniStackedWidget,
-                            PopUpAniStackedWidget)
-from qframelesswindow import FramelessMainWindow, FramelessWindow
+                            PopUpAniStackedWidget, CardWidget)
 
 from plugin_base import PluginBase
 
@@ -19,31 +18,17 @@ class ContainerPlugin(PluginBase):
         return True
 
 
-
-class FramelessMainWindowPlugin(ContainerPlugin, QPyDesignerCustomWidgetPlugin):
-    """ Frameless main window plugin """
-
-    def createWidget(self, parent):
-        return FramelessMainWindow(parent)
-
-    def icon(self):
-        return super().icon("TitleBar")
-
-    def name(self):
-        return "FramelessMainWindow"
-
-
-class FramelessWindowPlugin(ContainerPlugin, QPyDesignerCustomWidgetPlugin):
-    """ Frameless window plugin """
+class CardWidgetPlugin(ContainerPlugin, QPyDesignerCustomWidgetPlugin):
+    """ Single direction scroll area plugin """
 
     def createWidget(self, parent):
-        return FramelessWindow(parent)
+        return CardWidget(parent)
 
     def icon(self):
-        return super().icon("TitleBar")
+        return super().icon("CommandBar")
 
     def name(self):
-        return "FramelessWindow"
+        return "CardWidget"
 
 
 class ScrollAreaPluginBase(ContainerPlugin):
