@@ -6,15 +6,33 @@ StackedWidget {
     background-color: rgb(249, 249, 249);
 }
 
-MainWindow {
+SplitFluentWindow>StackedWidget {
+    border-top-left-radius: 0px;
+    border-top: none;
+}
+
+FluentWindowBase {
     background-color: rgb(243, 243, 243);
 }
 
-CustomTitleBar > QLabel#titleLabel {
+FluentTitleBar, SplitTitleBar {
+    background-color: transparent;
+}
+
+FluentTitleBar>QLabel#titleLabel,
+SplitTitleBar>QLabel#titleLabel {
     color: black;
     background: transparent;
     font: 13px 'Segoe UI';
     padding: 0 4px
+}
+
+MSFluentTitleBar>QLabel#titleLabel {
+    padding: 0 10px
+}
+
+SplitTitleBar>QLabel#titleLabel {
+    padding: 0 5px
 }
 
 MinimizeButton {

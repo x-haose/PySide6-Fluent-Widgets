@@ -1,26 +1,26 @@
-StackedWidget {
-    border: 1px solid rgb(29, 29, 29);
-    border-right: none;
-    border-bottom: none;
-    border-top-left-radius: 10px;
-    background-color: rgb(39, 39, 39);
-}
-
-
-MainWindow {
+FluentWindowBase {
     background-color: rgb(32, 32, 32);
 }
 
-CustomTitleBar {
+FluentTitleBar, SplitTitleBar {
     background-color: transparent;
 }
 
 
-CustomTitleBar>QLabel#titleLabel {
+FluentTitleBar>QLabel#titleLabel,
+SplitTitleBar>QLabel#titleLabel {
     background: transparent;
     font: 13px 'Segoe UI';
     padding: 0 4px;
     color: white;
+}
+
+MSFluentTitleBar>QLabel#titleLabel {
+    padding: 0 10px
+}
+
+SplitTitleBar>QLabel#titleLabel {
+    padding: 0 5px
 }
 
 MinimizeButton {
@@ -47,3 +47,19 @@ CloseButton {
     qproperty-normalBackgroundColor: transparent;
 }
 
+StackedWidget {
+    border: 1px solid rgb(29, 29, 29);
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    background-color: rgb(39, 39, 39);
+}
+
+StackedWidget QLabel {
+    color: white;
+}
+
+SplitFluentWindow > StackedWidget {
+    border-top-left-radius: 0px;
+    border-top: none;
+}
