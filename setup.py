@@ -6,7 +6,7 @@ with open('README.md', encoding='utf-8') as f:
 
 setuptools.setup(
     name="PyQt-Fluent-Widgets",
-    version="1.2.0",
+    version="1.2.6",
     keywords="pyqt fluent widgets",
     author="zhiyiYo",
     author_email="shokokawaii@outlook.com",
@@ -18,7 +18,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=[
         "PyQt5>=5.15.0",
-        "PyQt5-Frameless-Window>=0.3.1",
+        "PyQt5-Frameless-Window>=0.3.3",
         "darkdetect",
     ],
     extras_require = {
@@ -30,7 +30,7 @@ setuptools.setup(
         'Operating System :: OS Independent'
     ],
     project_urls={
-        'Documentation': 'https://pyqt-fluent-widgets.readthedocs.io/',
+        'Documentation': 'https://qfluentwidgets.com/',
         'Source Code': 'https://github.com/zhiyiYo/PyQt-Fluent-Widgets',
         'Bug Tracker': 'https://github.com/zhiyiYo/PyQt-Fluent-Widgets/issues',
     }
